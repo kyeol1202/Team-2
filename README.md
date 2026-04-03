@@ -374,10 +374,6 @@ http://localhost:8080
 > Spring Security 6이 JSP forward 요청도 가로채서 `/login`으로 무한 리다이렉트  
 > **해결:** `SecurityConfig.java`에 `dispatcherTypeMatchers(FORWARD, INCLUDE).permitAll()` 추가
 
-### 🔧 DB 타입 불일치
-> `purchase_orders.po_id`가 `VARCHAR`인데 Java에서 `Long`으로 받아 파싱 오류  
-> **해결:** 매퍼 및 도메인 클래스 타입 수정
-
 ### 🔧 자동 발주 로직 오류
 > 재고가 있는 부품도 발주되는 버그 (BOM수량 × 작업수량 - 현재재고 계산 오류)  
 > **해결:** 현재재고가 음수인 경우에만 그 절대값만큼 발주하도록 수정
